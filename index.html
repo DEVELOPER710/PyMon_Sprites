@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<style>
+html {
+    text-align: center;
+    background-color:black;
+    color: white;
+}
+</style>
+<html lang="en">
+<head>
+    <title>PyMon | Get Sprite | DEVELOPER710</title>
+</head>
+<body>
+
+<input type="text" value="" id="input"></input>
+<button onclick="display()">Search</button><br><br>
+<a id="name">Missing</a><br><br><br>
+<img id="front_def" src="https://raw.githubusercontent.com/DEVELOPER710/PokeBot/main/missing_sprites/normal.jpg" alt="sprite"></img>
+<label>Front Default Gif</label><br>
+<img id="back_def" src="https://raw.githubusercontent.com/DEVELOPER710/PokeBot/main/missing_sprites/normal.jpg" alt="sprite"></img>
+<label>Back Default Gif</label><br>
+<img id="front_sh" src="https://raw.githubusercontent.com/DEVELOPER710/PokeBot/main/missing_sprites/shiny.jpg" alt="sprite"></img>
+<label>Front Shiny Gif</label><br>
+<img id="back_sh" src="https://raw.githubusercontent.com/DEVELOPER710/PokeBot/main/missing_sprites/shiny.jpg" alt="sprite"></img>
+<label>Back Shiny Gif</label><br>
+<script>
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    }
+  );
+}
+
+function display() {
+    let value = document.getElementById("input").value.toLowerCase();
+    let mon_title = toTitleCase(value)
+    document.getElementById('name').innerHTML = mon_title + " Static Sprite";
+    document.getElementById('name').href = "https://play.radicalred.net/sprites/gen5/" + value + ".png";
+    let front_def_link = "https://play.pokemonshowdown.com/sprites/ani/" + value + ".gif"
+    document.getElementById('front_def').src = front_def_link;
+    document.getElementById('front_def').alt = value;
+    let back_def_link = "https://play.pokemonshowdown.com/sprites/ani-back/" + value + ".gif"
+    document.getElementById('back_def').src = back_def_link;
+    document.getElementById('back_def').alt = value;
+    let front_sh_link = "https://play.pokemonshowdown.com/sprites/ani-shiny/" + value + ".gif"
+    document.getElementById('front_sh').src = front_sh_link;
+    document.getElementById('front_sh').alt = value;
+    let back_sh_link = "https://play.pokemonshowdown.com/sprites/ani-back-shiny/" + value + ".gif"
+    document.getElementById('back_sh').src = back_sh_link;
+    document.getElementById('back_sh').alt = value;
+}
+</script>
+<br><br><br>
+<h5>By DEVELOPER710<br>Sprite Credits: Pokemon Showdown</h5>
+
+</body>
+</html>
